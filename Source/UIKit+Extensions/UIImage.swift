@@ -14,7 +14,7 @@ public extension UIImage {
      Creates UIImage from a color
      - parameter color: UIColor that will be based to create a UIImage
      */
-    static func fromColor(color: UIColor) -> UIImage {
+    public static func fromColor(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()!

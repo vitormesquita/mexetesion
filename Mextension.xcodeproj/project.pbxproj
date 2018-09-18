@@ -19,6 +19,8 @@
 		FC5098F82151985F00522CE8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098F72151985F00522CE8 /* UIViewController.swift */; };
 		FC5098FA215198B800522CE8 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098F9215198B800522CE8 /* UIButton.swift */; };
 		FC5098FC2151992700522CE8 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098FB2151992700522CE8 /* UIImage.swift */; };
+		FC5098FF21519DDE00522CE8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098FE21519DDE00522CE8 /* String.swift */; };
+		FC5099012151A0AE00522CE8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5099002151A0AE00522CE8 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		FC5098F72151985F00522CE8 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		FC5098F9215198B800522CE8 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		FC5098FB2151992700522CE8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		FC5098FE21519DDE00522CE8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FC5099002151A0AE00522CE8 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 		FC5098FD21519B2A00522CE8 /* Foundation+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FC5098FE21519DDE00522CE8 /* String.swift */,
+				FC5099002151A0AE00522CE8 /* Date.swift */,
 			);
 			path = "Foundation+Extensions";
 			sourceTree = "<group>";
@@ -182,11 +188,13 @@
 			files = (
 				FC5098F82151985F00522CE8 /* UIViewController.swift in Sources */,
 				FC5098DE21514C9600522CE8 /* ViewController.swift in Sources */,
+				FC5098FF21519DDE00522CE8 /* String.swift in Sources */,
 				FC5098F421518D3700522CE8 /* UITextField.swift in Sources */,
 				FC5098FA215198B800522CE8 /* UIButton.swift in Sources */,
 				FC5098F021514E6E00522CE8 /* UIView.swift in Sources */,
 				FC5098F62151959300522CE8 /* UITapGestureRecognizer.swift in Sources */,
 				FC5098FC2151992700522CE8 /* UIImage.swift in Sources */,
+				FC5099012151A0AE00522CE8 /* Date.swift in Sources */,
 				FC5098F22151867900522CE8 /* UICollectionViewCell.swift in Sources */,
 				FC5098DC21514C9600522CE8 /* AppDelegate.swift in Sources */,
 			);
