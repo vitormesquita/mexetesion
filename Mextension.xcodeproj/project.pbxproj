@@ -12,6 +12,9 @@
 		FC5098E121514C9600522CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5098DF21514C9600522CE8 /* Main.storyboard */; };
 		FC5098E321514C9700522CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC5098E221514C9700522CE8 /* Assets.xcassets */; };
 		FC5098E621514C9700522CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5098E421514C9700522CE8 /* LaunchScreen.storyboard */; };
+		FC5098F021514E6E00522CE8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098EF21514E6E00522CE8 /* UIView.swift */; };
+		FC5098F22151867900522CE8 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098F12151867900522CE8 /* UICollectionView.swift */; };
+		FC5098F421518D3700522CE8 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098F321518D3600522CE8 /* UITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		FC5098E221514C9700522CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC5098E521514C9700522CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC5098E721514C9700522CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC5098EF21514E6E00522CE8 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FC5098F12151867900522CE8 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		FC5098F321518D3600522CE8 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 		FC5098CF21514C9600522CE8 = {
 			isa = PBXGroup;
 			children = (
+				FC5098ED21514D7B00522CE8 /* Source */,
 				FC5098DA21514C9600522CE8 /* Mextension */,
 				FC5098D921514C9600522CE8 /* Products */,
 			);
@@ -62,6 +69,24 @@
 				FC5098E721514C9700522CE8 /* Info.plist */,
 			);
 			path = Mextension;
+			sourceTree = "<group>";
+		};
+		FC5098ED21514D7B00522CE8 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FC5098EE21514D9900522CE8 /* UIKit */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FC5098EE21514D9900522CE8 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FC5098EF21514E6E00522CE8 /* UIView.swift */,
+				FC5098F12151867900522CE8 /* UICollectionView.swift */,
+				FC5098F321518D3600522CE8 /* UITextField.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5098DE21514C9600522CE8 /* ViewController.swift in Sources */,
+				FC5098F421518D3700522CE8 /* UITextField.swift in Sources */,
+				FC5098F021514E6E00522CE8 /* UIView.swift in Sources */,
+				FC5098F22151867900522CE8 /* UICollectionView.swift in Sources */,
 				FC5098DC21514C9600522CE8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KXWH4SC5H2;
 				INFOPLIST_FILE = Mextension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KXWH4SC5H2;
 				INFOPLIST_FILE = Mextension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
