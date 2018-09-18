@@ -13,15 +13,16 @@ public extension UITextField {
 
     /**
      Create textField toolBar
-     - parameter color: Toolbar button's tint color
+     - parameter tintColor: Toolbar button's tint color
+     - parameter backgroundColor: Toolbar's background color
      - parameter rightButton: Optional right toolbar button
      - parameter leftButton: Optional left toolbar button
      */
-    public func addToolBar(color: UIColor, rightButton: UIBarButtonItem? = nil, leftButton: UIBarButtonItem? = nil) {
+    public func addToolBar(tintColor: UIColor, backgroundColor: UIColor = .white, rightButton: UIBarButtonItem? = nil, leftButton: UIBarButtonItem? = nil) {
         let toolBar = UIToolbar()
         toolBar.isTranslucent = true
-        toolBar.tintColor = color
-        toolBar.barTintColor = .white
+        toolBar.tintColor = tintColor
+        toolBar.barTintColor = backgroundColor
         toolBar.sizeToFit()
 
         var buttons: [UIBarButtonItem] = []

@@ -15,6 +15,7 @@
 		FC5098F021514E6E00522CE8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098EF21514E6E00522CE8 /* UIView.swift */; };
 		FC5098F22151867900522CE8 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098F12151867900522CE8 /* UICollectionView.swift */; };
 		FC5098F421518D3700522CE8 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098F321518D3600522CE8 /* UITextField.swift */; };
+		FC5098F62151959300522CE8 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098F52151959300522CE8 /* UITapGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FC5098EF21514E6E00522CE8 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FC5098F12151867900522CE8 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		FC5098F321518D3600522CE8 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		FC5098F52151959300522CE8 /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				FC5098EF21514E6E00522CE8 /* UIView.swift */,
 				FC5098F12151867900522CE8 /* UICollectionView.swift */,
 				FC5098F321518D3600522CE8 /* UITextField.swift */,
+				FC5098F52151959300522CE8 /* UITapGestureRecognizer.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				FC5098DE21514C9600522CE8 /* ViewController.swift in Sources */,
 				FC5098F421518D3700522CE8 /* UITextField.swift in Sources */,
 				FC5098F021514E6E00522CE8 /* UIView.swift in Sources */,
+				FC5098F62151959300522CE8 /* UITapGestureRecognizer.swift in Sources */,
 				FC5098F22151867900522CE8 /* UICollectionView.swift in Sources */,
 				FC5098DC21514C9600522CE8 /* AppDelegate.swift in Sources */,
 			);
