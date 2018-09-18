@@ -82,12 +82,13 @@
 		FC5098ED21514D7B00522CE8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				FC5098EE21514D9900522CE8 /* UIKit */,
+				FC5098FD21519B2A00522CE8 /* FoundationExtensions */,
+				FC5098EE21514D9900522CE8 /* UIKitExtensions */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		FC5098EE21514D9900522CE8 /* UIKit */ = {
+		FC5098EE21514D9900522CE8 /* UIKitExtensions */ = {
 			isa = PBXGroup;
 			children = (
 				FC5098EF21514E6E00522CE8 /* UIView.swift */,
@@ -98,7 +99,14 @@
 				FC5098F9215198B800522CE8 /* UIButton.swift */,
 				FC5098FB2151992700522CE8 /* UIImage.swift */,
 			);
-			path = UIKit;
+			path = UIKitExtensions;
+			sourceTree = "<group>";
+		};
+		FC5098FD21519B2A00522CE8 /* FoundationExtensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FoundationExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
