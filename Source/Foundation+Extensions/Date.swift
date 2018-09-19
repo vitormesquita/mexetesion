@@ -48,6 +48,10 @@ public extension Date {
 // MARK: - Convert string to date
 public extension Date {
 
+    /**
+     Convert string to optional date
+     - parameter string: Date string
+     */
     public static func dateFrom(string: String?) -> Date? {
         guard let stringValue = string else { return nil }
 
