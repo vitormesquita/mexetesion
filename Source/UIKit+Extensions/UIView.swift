@@ -129,7 +129,7 @@ public extension UIView {
         gradient.locations = locations
         view.layer.insertSublayer(gradient, at: 0)
         self.addSubview(view)
-        self.bringSubview(toFront: view)
+        self.bringSubviewToFront(view)
     }
 
     /**
@@ -160,7 +160,7 @@ public extension UIView {
         gradient.locations = locations
         view.layer.insertSublayer(gradient, at: 0)
         self.addSubview(view)
-        self.bringSubview(toFront: view)
+        self.bringSubviewToFront(view)
     }
 }
 
