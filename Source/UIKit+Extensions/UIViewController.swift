@@ -9,13 +9,13 @@
 import UIKit
 
 public extension UIViewController {
-
-    /**
-     Remove UIViewController from parentViewController
-     */
-    public func removeDefinitely() {
-        self.willMove(toParent: nil)
-        self.view.removeFromSuperview()
-        self.removeFromParent()
-    }
+   
+   /**
+    Remove UIViewController from parentViewController
+    */
+   public func removeDefinitely() {
+      self.willMove(toParent: nil)
+      self.view.removeFromSuperview()
+      self.removeFromParent()
+   }
 }

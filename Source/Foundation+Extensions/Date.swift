@@ -10,72 +10,127 @@ import Foundation
 
 // MARK: - Convert to string
 public extension Date {
-
-    /**
-     Tranform just date (year/month/day) in string
-     */
-    var simpleDate: String {
-        return stringBy(format: "yyyy-MM-dd")
-    }
-
-    /**
-     Tranform date and time in string
-     */
-    var fullDate: String {
-        return stringBy(format: "yyyy-MM-dd HH:mm:ss")
-    }
-
-    /**
-     Tranform date in a displayable string
-     */
-    var simpleDisplayDate: String {
-        return stringBy(format: "dd/MM/yyyy")
-    }
-
-    /**
-     Convert a date to string with especific format
-     - See Also [NSDateFormatter](http://nsdateformatter.com/)
-     - parameter format: String date format
-
-     */
-    func stringBy(format: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        return dateFormatter.string(from: self)
-    }
+   
+   /**
+    Tranform just date (year/month/day) in string
+    */
+   var simpleDate: String {
+      return stringBy(format: "yyyy-MM-dd")
+   }
+   
+   /**
+    Tranform date and time in string
+    */
+   var fullDate: String {
+      return stringBy(format: "yyyy-MM-dd HH:mm:ss")
+   }
+   
+   /**
+    Tranform date in a displayable string
+    */
+   var simpleDisplayDate: String {
+      return stringBy(format: "dd/MM/yyyy")
+   }
+   
+   /**
+    Transform date in a week day date (ex: thursday)
+    */
+   var weekDay: String {
+      let myCalendar = Calendar(identifier: .gregorian)
+      let weekDay = myCalendar.component(.weekday, from: self)
+      let dateFormatter = DateFormatter()
+      return dateFormatter.weekdaySymbols[weekDay]
+   }
+   
+   /**
+    TODO
+    */
+   var relativeDate: String {
+      let dateFormatter = DateFormatter()
+      dateFormatter.doesRelativeDateFormatting = true
+      dateFormatter.dateStyle = .short
+      return dateFormatter.string(from: self)
+   }
+   
+   /**
+    Convert a date to string with especific format
+    - See Also [NSDateFormatter](http://nsdateformatter.com/)
+    - parameter format: String date format
+    - parameter timeZone: TimeZone to set the correct timestemp if needed
+    */
+   func stringBy(format: String, timeZone: TimeZone = TimeZone.current) -> String {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = format
+      dateFormatter.timeZone = timeZone
+      return dateFormatter.string(from: self)
+   }
 }
 
 // MARK: - Convert string to date
 public extension Date {
+   
+   /**
+    Convert string to optional date
+    - parameter string: Date string
+    */
+   public static func dateFrom(string: String?) -> Date? {
+      guard let stringValue = string else { return nil }
+      
+      let parseFormat = DateFormatter()
+      
+      let dateFormat =  ["yyyy-MM-dd",
+                         "yyyy-MM-dd'T'HH:mm:ss",
+                         "yyyy-MM-ddTHH:mm:ss",
+                         "yyyy-MM-dd'T'HH:mm:ss",
+                         "yyyy-MM-dd'T'HH:mm:ssZZ",
+                         "yyyy-MM-dd'T'HH:mm:ssZZZ",
+                         "yyyy-MM-dd'T'HH:mm:ss.SSS",
+                         "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ",
+                         "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZ",
+                         "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZ",
+                         "yyyy-MM-dd HH:mm:ss",
+                         "HH:mm:ss",
+                         "HH:mm"]
+      
+      let dates = dateFormat.compactMap { format -> Date? in
+         parseFormat.dateFormat = format
+         parseFormat.timeZone = TimeZone.current
+         return parseFormat.date(from: stringValue)
+      }
+      return dates.first
+   }
+}
 
-    /**
-     Convert string to optional date
-     - parameter string: Date string
-     */
-    public static func dateFrom(string: String?) -> Date? {
-        guard let stringValue = string else { return nil }
-
-        let parseFormat = DateFormatter()
-
-        let dateFormat =  ["yyyy-MM-dd",
-                           "yyyy-MM-dd'T'HH:mm:ss",
-                           "yyyy-MM-ddTHH:mm:ss",
-                           "yyyy-MM-dd'T'HH:mm:ss",
-                           "yyyy-MM-dd'T'HH:mm:ssZZ",
-                           "yyyy-MM-dd'T'HH:mm:ssZZZ",
-                           "yyyy-MM-dd'T'HH:mm:ss.SSS",
-                           "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ",
-                           "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZ",
-                           "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZ",
-                           "yyyy-MM-dd HH:mm:ss",
-                           "HH:mm:ss",
-                           "HH:mm"]
-
-        let dates = dateFormat.compactMap { format -> Date? in
-            parseFormat.dateFormat = format
-            parseFormat.timeZone = TimeZone.current
-            return parseFormat.date(from: stringValue)
-        }
-        return dates.first
-    }
+// MARK: - Utils
+public extension Date {
+   
+   /**
+    Verify date is equals current date
+    */
+   var isToday: Bool {
+      return Calendar.current.isDateInToday(self)
+   }
+   
+   /**
+    Verify date is equals tomorrow
+    */
+   var isTomorrow: Bool {
+      return Calendar.current.isDateInTomorrow(self)
+   }
+   
+   /**
+    Verify date is equals yesterday
+    */
+   var isYesterday: Bool {
+      return Calendar.current.isDateInYesterday(self)
+   }
+   
+   /**
+    */
+   var whitoutTimeStamp: Date {
+      guard let date = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month, .day], from: self)) else {
+         fatalError("Failed to strip time from Date object")
+      }
+      return date
+   }
 }
