@@ -38,17 +38,16 @@ public extension Date {
    var weekDay: String {
       let myCalendar = Calendar(identifier: .gregorian)
       let weekDay = myCalendar.component(.weekday, from: self)
-      let dateFormatter = DateFormatter()
-      return dateFormatter.weekdaySymbols[weekDay]
+      return DateFormatter().weekdaySymbols[weekDay]
    }
    
    /**
-    TODO
+    Relative date from today (ex: Tomorrow, Yesterday)
     */
    var relativeDate: String {
       let dateFormatter = DateFormatter()
-      dateFormatter.doesRelativeDateFormatting = true
       dateFormatter.dateStyle = .short
+      dateFormatter.doesRelativeDateFormatting = true
       return dateFormatter.string(from: self)
    }
    
@@ -61,6 +60,19 @@ public extension Date {
    func stringBy(format: String, timeZone: TimeZone = TimeZone.current) -> String {
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = format
+      dateFormatter.timeZone = timeZone
+      return dateFormatter.string(from: self)
+   }
+   
+   /**
+    Get time from date and convert it to string
+    - parameter style: Time style to show as string
+    - parameter timeZone: TimeZone to set the correct timestemp if needed
+    */
+   func time(style: DateFormatter.Style, timeZone: TimeZone = TimeZone.current) -> String {
+      let dateFormatter = DateFormatter()
+      dateFormatter.timeStyle = style
+      dateFormatter.dateStyle = .none
       dateFormatter.timeZone = timeZone
       return dateFormatter.string(from: self)
    }
@@ -132,5 +144,13 @@ public extension Date {
          fatalError("Failed to strip time from Date object")
       }
       return date
+   }
+   
+   /**
+    Verify is date is in the same week as it
+    - parameter date: Date to be compared
+    */
+   func isInWeek(date: Date) -> Bool {
+      return Calendar.current.isDate(self, equalTo: date, toGranularity: .weekOfYear)
    }
 }
