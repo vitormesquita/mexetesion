@@ -10,6 +10,9 @@ import Foundation
 
 public extension Double {
    
+   /**
+    Transform value in currency string and return 2 digits after comma
+    */
    var currency: String {
       let formatter = NumberFormatter()
       formatter.numberStyle = .currency
@@ -19,6 +22,9 @@ public extension Double {
       return formatter.string(from: NSNumber(value: self)) ?? "0,00"
    }
    
+   /**
+    Transform value in currency string without any digits after comma
+    */
    var currencyWithouDigits: String {
       let formatter = NumberFormatter()
       formatter.numberStyle = .currency
@@ -28,6 +34,11 @@ public extension Double {
       return formatter.string(from: NSNumber(value: self)) ?? "0"
    }
    
+   /**
+    Transform value in currency string
+    - parameter symbol: Country symbol to show before the value
+    - parameter digits: Number of digits to show after comma
+    */
    func currencyWith(symbol: String, digits: Int) -> String {
       let formatter = NumberFormatter()
       formatter.numberStyle = .currency
