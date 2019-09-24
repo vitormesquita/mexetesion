@@ -109,7 +109,7 @@ public extension Date {
       let dates = dateFormat.compactMap { format -> Date? in
          parseFormat.dateFormat = format
          parseFormat.timeZone = TimeZone.current
-         parseFormat.locale = Locale(identifier: "pt-BR")
+         parseFormat.locale = Locale(identifier: "pt-BR") //to handle with non 24-hour time
          return parseFormat.date(from: stringValue)
       }
       return dates.first
