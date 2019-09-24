@@ -85,7 +85,7 @@ public extension Date {
     Convert string to optional date
     - parameter string: Date string
     */
-   public static func dateFrom(string: String?) -> Date? {
+   static func dateFrom(string: String?) -> Date? {
       guard let stringValue = string else { return nil }
       
       let parseFormat = DateFormatter()
@@ -107,6 +107,7 @@ public extension Date {
       let dates = dateFormat.compactMap { format -> Date? in
          parseFormat.dateFormat = format
          parseFormat.timeZone = TimeZone.current
+         parseFormat.locale = Locale(identifier: "pt-BR")
          return parseFormat.date(from: stringValue)
       }
       return dates.first
