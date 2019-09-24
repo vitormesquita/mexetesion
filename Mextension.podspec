@@ -15,8 +15,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Vitor Mesquita' => 'vitor.mesquita09@gmail.com' }
   s.source           = { :git => 'https://github.com/vitormesquita/mexetesion.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
-
+  s.ios.deployment_target = '10.0'
   s.default_subspec = "All"
 
   s.subspec "All" do |ss|
