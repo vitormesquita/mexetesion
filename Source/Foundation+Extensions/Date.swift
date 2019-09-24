@@ -56,9 +56,11 @@ public extension Date {
     - See Also [NSDateFormatter](http://nsdateformatter.com/)
     - parameter format: String date format
     - parameter timeZone: TimeZone to set the correct timestemp if needed
+    - parameter locale: Locale to set the correct locale if needed
     */
-   func stringBy(format: String, timeZone: TimeZone = TimeZone.current) -> String {
+   func stringBy(format: String, timeZone: TimeZone = .current, locale: Locale = .current) -> String {
       let dateFormatter = DateFormatter()
+      dateFormatter.locale = locale
       dateFormatter.dateFormat = format
       dateFormatter.timeZone = timeZone
       return dateFormatter.string(from: self)
