@@ -18,7 +18,7 @@ public extension UITextField {
     - parameter rightButton: Optional right toolbar button
     - parameter leftButton: Optional left toolbar button
     */
-   public func addToolBar(tintColor: UIColor, backgroundColor: UIColor = .white, rightButton: UIBarButtonItem? = nil, leftButton: UIBarButtonItem? = nil) {
+   func addToolBar(tintColor: UIColor, backgroundColor: UIColor = .white, rightButton: UIBarButtonItem? = nil, leftButton: UIBarButtonItem? = nil) {
       let toolBar = UIToolbar()
       toolBar.isTranslucent = true
       toolBar.tintColor = tintColor

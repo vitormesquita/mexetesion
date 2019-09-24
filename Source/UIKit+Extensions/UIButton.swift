@@ -15,7 +15,7 @@ public extension UIButton {
     - parameter title: Button's title
     - parameter state: Button's state to show especific title
     */
-   public func setTitleWithoutAnimation(_ title: String?, for state: UIControl.State) {
+   func setTitleWithoutAnimation(_ title: String?, for state: UIControl.State) {
       UIView.performWithoutAnimation {[weak self] in
          guard let strongSelf = self else { return }
          strongSelf.setTitle(title, for: state)

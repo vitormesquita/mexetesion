@@ -14,7 +14,7 @@ public extension UIImage {
     Creates UIImage from a color
     - parameter color: UIColor that will be based to create a UIImage
     */
-   public static func fromColor(color: UIColor) -> UIImage {
+   static func fromColor(color: UIColor) -> UIImage {
       let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
       UIGraphicsBeginImageContext(rect.size)
       let context = UIGraphicsGetCurrentContext()!
@@ -29,7 +29,7 @@ public extension UIImage {
    /**
     Check image's main color is dark
     */
-   public var isDark: Bool {
+   var isDark: Bool {
       return self.cgImage?.isDark ?? false
    }
 }

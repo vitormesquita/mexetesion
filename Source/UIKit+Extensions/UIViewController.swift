@@ -13,7 +13,7 @@ public extension UIViewController {
    /**
     Remove UIViewController from parentViewController
     */
-   public func removeDefinitely() {
+   func removeDefinitely() {
       self.willMove(toParent: nil)
       self.view.removeFromSuperview()
       self.removeFromParent()

@@ -16,7 +16,7 @@ public extension UITapGestureRecognizer {
     - parameter label: UILabel who will verified is was clicked
     - parameter targetRange: Range text to verify if label was cliked in some especific text
     */
-   public func didTapAttributedIn(label: UILabel, inRange targetRange: NSRange) -> Bool {
+   func didTapAttributedIn(label: UILabel, inRange targetRange: NSRange) -> Bool {
       // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage
       let layoutManager = NSLayoutManager()
       let textContainer = NSTextContainer(size: CGSize.zero)
@@ -50,7 +50,7 @@ public extension UITapGestureRecognizer {
     Verify if UILabel was clicked in especifc text
     - parameter text: String who will checked if clicked
     */
-   public func tapLabelIn(text: String) -> Bool {
+   func tapLabelIn(text: String) -> Bool {
       guard let label = self.view as? UILabel else { return false }
       
       let labelText = label.text!

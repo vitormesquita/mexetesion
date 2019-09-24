@@ -38,7 +38,7 @@ public extension String {
     Format string to show as currency
     - parameter symbol: Currency symbol to show after string formatted
     */
-   public func currency(symbol: String) -> String? {
+   func currency(symbol: String) -> String? {
       let formatter = NumberFormatter()
       formatter.numberStyle = .currencyAccounting
       formatter.currencySymbol = symbol

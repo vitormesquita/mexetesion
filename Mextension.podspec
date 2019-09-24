@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Mextension'
-  s.version          = '0.4.2'
+  s.version          = '0.4.3'
   s.summary          = 'Some extensions classes to help code'
   s.description      = <<-DESC
                     Some powerful extensions to help your code and do not copy code from stack overflow
@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Vitor Mesquita' => 'vitor.mesquita09@gmail.com' }
   s.source           = { :git => 'https://github.com/vitormesquita/mexetesion.git', :tag => s.version.to_s }
+  s.swift_versions   = [5.0]
 
   s.ios.deployment_target = '10.0'
   s.default_subspec = "All"

@@ -25,7 +25,7 @@ public extension UIView {
     - parameter corners: Corners to round
     - parameter radius:  Radius to round to
     */
-   public func round(corners: UIRectCorner, radius: CGFloat) {
+   func round(corners: UIRectCorner, radius: CGFloat) {
       _round(corners: corners, radius: radius)
    }
    
@@ -36,7 +36,7 @@ public extension UIView {
     - parameter borderColor: The border color
     - parameter borderWidth: The border width
     */
-   public func round(corners: UIRectCorner, radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
+   func round(corners: UIRectCorner, radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
       let mask = _round(corners: corners, radius: radius)
       addBorder(mask: mask, borderColor: borderColor, borderWidth: borderWidth)
    }
@@ -47,7 +47,7 @@ public extension UIView {
     - parameter borderColor: The border color
     - parameter borderWidth: The border width
     */
-   public func fullyRound(diameter: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
+   func fullyRound(diameter: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
       layer.masksToBounds = true
       layer.cornerRadius = diameter / 2
       layer.borderWidth = borderWidth
@@ -73,7 +73,7 @@ public extension UIView {
     - parameter borderColor: Border color
     - parameter borderWidth: Border width
     */
-   public func addBorder(mask: CAShapeLayer, borderColor: UIColor, borderWidth: CGFloat) {
+   func addBorder(mask: CAShapeLayer, borderColor: UIColor, borderWidth: CGFloat) {
       let borderLayer = CAShapeLayer()
       borderLayer.path = mask.path
       borderLayer.fillColor = UIColor.clear.cgColor
@@ -91,7 +91,7 @@ public extension UIView {
     Add view on parent and put all constraints (top, bottom, left, right)
     - parameter subview: View to be add on parent
     */
-   public func addSubviewOnEdges(_ subview: UIView) {
+   func addSubviewOnEdges(_ subview: UIView) {
       self.addSubview(subview)
       self.translatesAutoresizingMaskIntoConstraints = false
       subview.translatesAutoresizingMaskIntoConstraints = false
@@ -112,7 +112,7 @@ public extension UIView {
    
    /**
     */
-   @discardableResult public func addGradient(colors: [UIColor], locations: [NSNumber]) -> CAGradientLayer {
+   @discardableResult func addGradient(colors: [UIColor], locations: [NSNumber]) -> CAGradientLayer {
       let gradient = CAGradientLayer()
       gradient.colors = colors.map { $0.cgColor }
       gradient.locations = locations
@@ -126,7 +126,7 @@ public extension UIView {
     - parameter colors: Gradient's colors
     - parameter locations: Gradient's colors locations
     */
-   @discardableResult public func addTopAndBottomGradient(colors: [UIColor]? = nil, locations: [NSNumber]? = nil) -> CAGradientLayer {
+   @discardableResult func addTopAndBottomGradient(colors: [UIColor]? = nil, locations: [NSNumber]? = nil) -> CAGradientLayer {
       let _color = colors ?? [UIColor.black, UIColor.clear, UIColor.clear, UIColor.black]
       let _locations = locations ?? [0.0, 0.3, 0.6, 0.9]
       return addGradient(colors: _color, locations: _locations)
@@ -138,7 +138,7 @@ public extension UIView {
     - parameter colors: Gradient's colors
     - parameter locations: Gradient's colors locations
     */
-   @discardableResult public func addBottomGradient(colors: [UIColor]? = nil, locations: [NSNumber]? = nil) -> CAGradientLayer {
+   @discardableResult func addBottomGradient(colors: [UIColor]? = nil, locations: [NSNumber]? = nil) -> CAGradientLayer {
       let _color = colors ?? [UIColor.clear, UIColor.black]
       let _locations = locations ?? [0, 0.8]
       return addGradient(colors: _color, locations: _locations)
@@ -148,7 +148,7 @@ public extension UIView {
 // MARK: - 4. Separetor Views
 public extension UIView {
    
-   public enum SeparatorViewPosition {
+   enum SeparatorViewPosition {
       case top
       case bottom
       case left
@@ -182,7 +182,7 @@ public extension UIView {
    /**
     Default separetor line color
     */
-   public static var defaultSeparetorColor: UIColor {
+   static var defaultSeparetorColor: UIColor {
       return UIColor(white: 0, alpha: 0.12)
    }
    
@@ -193,7 +193,7 @@ public extension UIView {
     - parameter insets: `UIEdgeInsets` to create margin on constraints
     - parameter positions: Positions where will add separetor on parent View
     */
-   public func addSeparetors(color: UIColor = defaultSeparetorColor, size: CGFloat = 1, insets: UIEdgeInsets = .zero, positions: [SeparatorViewPosition]) {
+   func addSeparetors(color: UIColor = defaultSeparetorColor, size: CGFloat = 1, insets: UIEdgeInsets = .zero, positions: [SeparatorViewPosition]) {
       for position in positions {
          let separetorView = UIView.separetorView(color: color, position: position, size: size)
          

@@ -15,7 +15,7 @@ public extension UICollectionViewCell {
     Calculate UICollectionViewCell's height by content and width
     - parameter width: UICollectionViewCell's width
     */
-   public func heightForWidth(width: CGFloat) -> CGFloat {
+   func heightForWidth(width: CGFloat) -> CGFloat {
       contentView.frame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: width, height: contentView.frame.size.height)
       contentView.layoutIfNeeded()
       

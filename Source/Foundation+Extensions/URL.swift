@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension URL {
+public extension URL {
    
    /**
     Search value on URL path with Query name
