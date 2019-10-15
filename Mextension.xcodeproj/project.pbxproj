@@ -113,9 +113,9 @@
 		FC5098FD21519B2A00522CE8 /* Foundation+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FC5099002151A0AE00522CE8 /* Date.swift */,
 				FC1C040922495C420009DC90 /* Double.swift */,
 				FC5098FE21519DDE00522CE8 /* String.swift */,
-				FC5099002151A0AE00522CE8 /* Date.swift */,
 				FC7390E32252AB27001EDCF5 /* URL.swift */,
 			);
 			path = "Foundation+Extensions";
@@ -153,6 +153,7 @@
 				TargetAttributes = {
 					FC5098D721514C9600522CE8 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -357,7 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.vitormesquita.Mextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -375,7 +376,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.vitormesquita.Mextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

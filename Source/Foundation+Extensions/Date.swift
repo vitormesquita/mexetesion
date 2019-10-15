@@ -86,8 +86,9 @@ public extension Date {
    /**
     Convert string to optional date
     - parameter string: Date string
+    - parameter locale: Locale to handle when user is not using 24-hour time format
     */
-   static func dateFrom(string: String?) -> Date? {
+   static func dateFrom(string: String?, locale: Locale = Locale(identifier: "pt-BR")) -> Date? {
       guard let stringValue = string else { return nil }
       
       let parseFormat = DateFormatter()
@@ -109,7 +110,7 @@ public extension Date {
       let dates = dateFormat.compactMap { format -> Date? in
          parseFormat.dateFormat = format
          parseFormat.timeZone = TimeZone.current
-         parseFormat.locale = Locale(identifier: "pt-BR") //to handle with non 24-hour time
+         parseFormat.locale = locale
          return parseFormat.date(from: stringValue)
       }
       return dates.first
@@ -155,5 +156,32 @@ public extension Date {
     */
    func isInWeek(date: Date) -> Bool {
       return Calendar.current.isDate(self, equalTo: date, toGranularity: .weekOfYear)
+   }
+}
+
+//MARK: - TimeRemaing
+public struct TimeRemaining {
+   public let days: Int
+   public let hours: Int
+   public let minutes: Int
+   public let seconds: Int
+}
+
+public extension Date {
+   
+   /**
+    Calculate how long is it until this date.
+    - parameter secondsFromGMT: Represents how seconds the user is from GMT, is to handle time zone
+    - Returns: A struct TimeRemaining (Days, Hours, Minutes, Seconds) all as Int.
+    */
+   func timeRemainingSiceNow(secondsFromGMT: Double = 0) -> TimeRemaining {
+      let time = NSInteger(self.timeIntervalSinceNow - secondsFromGMT)
+      
+      let days = (time / 86400)
+      let hours = (time / 3600) % 24
+      let minutes = (time / 60) % 60
+      let seconds = time % 60
+      
+      return TimeRemaining(days: days, hours: hours, minutes: minutes, seconds: seconds)
    }
 }

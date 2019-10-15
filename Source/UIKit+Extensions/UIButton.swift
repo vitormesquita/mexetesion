@@ -17,9 +17,9 @@ public extension UIButton {
     */
    func setTitleWithoutAnimation(_ title: String?, for state: UIControl.State) {
       UIView.performWithoutAnimation {[weak self] in
-         guard let strongSelf = self else { return }
-         strongSelf.setTitle(title, for: state)
-         strongSelf.layoutIfNeeded()
+         guard let self = self else { return }
+         self.setTitle(title, for: state)
+         self.layoutIfNeeded()
       }
    }
 }
