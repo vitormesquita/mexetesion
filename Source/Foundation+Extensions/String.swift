@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK: - Formatters
 public extension String {
    
    /**
@@ -59,7 +60,7 @@ public extension String {
    }
 }
 
-// MARK: - Convertions
+//MARK: - Convertions
 public extension String {
    
    /**
@@ -86,7 +87,7 @@ public extension String {
    }
 }
 
-// MARK: - Validations
+//MARK: - Validations
 public extension String {
    
    /**
@@ -96,5 +97,19 @@ public extension String {
       let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
       let predicate = NSPredicate(format: "SELF MATCHES %@", regEx)
       return predicate.evaluate(with: self)
+   }
+}
+
+//MARK: - Utils
+public extension String {
+   
+   /**
+    Return a string without spaces, new lines, lowecased and special characters insensitive
+    */
+   var trimmedWithoutSpecialChar: String {
+      var trimmed = self.trimmingCharacters(in: .whitespacesAndNewlines)
+      trimmed = trimmed.lowercased()
+      trimmed = trimmed.folding(options: .diacriticInsensitive, locale: .current)
+      return trimmed
    }
 }
