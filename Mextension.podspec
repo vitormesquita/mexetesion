@@ -20,9 +20,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'  
 
   s.subspec "All" do |ss|
-    ss.source_files  = "Source/**/*"
-    ss.framework = "UIKit"
-    ss.framework  = "Foundation"
+    ss.dependency "Mextension/UIKit"
+    ss.dependency "Mextension/Foundation"
   end
 
   s.subspec "UIKit" do |ss|
