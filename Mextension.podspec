@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Mextension'
-  s.version          = '0.5.1'
+  s.version          = '0.5.2'
   s.summary          = 'Some extensions classes to help code'
   s.description      = <<-DESC
                     Some powerful extensions to help your code and do not copy code from stack overflow
