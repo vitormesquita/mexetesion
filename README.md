@@ -1,14 +1,24 @@
 # Mexetesion
 
-A couple of extensions methods and variable to help you code and do not search always codes on stack overflow
+A couple of extensions methods and variable to help you code and do not search always codes on stack overflow. 
+
+It is separete into two sections `UIKit` and `Foundation`, here you can see which classes we've developed extensions:
 
 - UIKit
 	- UIView
-	- ...
+	- UIColor
+    - UIImage
+    - UIButton
+    - UITextField
+    - UIViewController
+    - UICollectionViewCell
+    - UITapGestureRecognizer    
 - Foudation
+    - Date
+    - Double
 	- String
-	- Date
-
+    - URL
+	
 
 ## Installation
 
