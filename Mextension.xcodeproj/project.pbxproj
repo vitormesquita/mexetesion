@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6484876023C7A5A10012CBF2 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484875F23C7A5A10012CBF2 /* UISearchBar.swift */; };
 		64C3799D23C6138C00D93B22 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3799C23C6138C00D93B22 /* UIColor.swift */; };
 		FC1C040A22495C420009DC90 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1C040922495C420009DC90 /* Double.swift */; };
 		FC5098DC21514C9600522CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5098DB21514C9600522CE8 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6484875F23C7A5A10012CBF2 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		64C3799C23C6138C00D93B22 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FC1C040922495C420009DC90 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		FC5098D821514C9600522CE8 /* Mextension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mextension.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				FC5098FB2151992700522CE8 /* UIImage.swift */,
 				FC5098F9215198B800522CE8 /* UIButton.swift */,
 				FC5098F321518D3600522CE8 /* UITextField.swift */,
+				6484875F23C7A5A10012CBF2 /* UISearchBar.swift */,
 				FC5098F72151985F00522CE8 /* UIViewController.swift */,
 				FC5098F12151867900522CE8 /* UICollectionViewCell.swift */,
 				FC5098F52151959300522CE8 /* UITapGestureRecognizer.swift */,
@@ -210,6 +213,7 @@
 				FC5099012151A0AE00522CE8 /* Date.swift in Sources */,
 				FC5098F22151867900522CE8 /* UICollectionViewCell.swift in Sources */,
 				FC5098DC21514C9600522CE8 /* AppDelegate.swift in Sources */,
+				6484876023C7A5A10012CBF2 /* UISearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
